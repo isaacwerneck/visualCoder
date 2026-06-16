@@ -1,0 +1,14 @@
+{
+  "name": "audio-visualizer",
+  "version": "1.0.0",
+  "description": "Visualizador de áudio 3D psicodélico estilo Windows XP",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "dependencies": {
+    "electron": "^30.0.0",
+    "three": "^0.162.0"
+  }
+}

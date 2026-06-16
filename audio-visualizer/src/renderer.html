@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Visualizer XP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <div id="three-container"></div>
+
+    <div id="welcome-overlay">
+      <div class="welcome-content">
+        <h1>🎵 Audio Visualizer XP</h1>
+        <p>Arraste uma música aqui ou use Ctrl+O para começar</p>
+        <div class="welcome-hints">
+          <span>Ctrl+O — Abrir</span>
+          <span>Espaço — Play/Pause</span>
+          <span>F11 — Tela cheia</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="control-panel">
+      <div class="panel-header">
+        <span class="panel-title">🎛️ Controles</span>
+        <button id="btn-hide-panel" class="xp-button xp-button-small">✕</button>
+      </div>
+      <div class="panel-scroll">
+        <div class="panel-section">
+          <div class="section-title">Player</div>
+          <div class="player-controls">
+            <button id="btn-prev" class="xp-button">⏮</button>
+            <button id="btn-play" class="xp-button xp-button-primary">▶</button>
+            <button id="btn-next" class="xp-button">⏭</button>
+            <button id="btn-stop" class="xp-button">⏹</button>
+          </div>
+          <div class="player-info">
+            <span id="current-track" class="track-name">Nenhuma música</span>
+            <input type="range" id="progress-bar" class="xp-slider" min="0" max="100" value="0">
+            <div class="time-display"><span id="current-time">0:00</span><span id="total-time">0:00</span></div>
+            <div class="volume-control"><label>🔊</label><input type="range" id="volume-slider" class="xp-slider" min="0" max="100" value="80"></div>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="section-title">Arquivos</div>
+          <div id="drop-zone" class="drop-zone">
+            <span>🎵 Arraste músicas aqui</span>
+            <button id="btn-open-file" class="xp-button">Abrir arquivo</button>
+            <button id="btn-open-folder" class="xp-button">Abrir pasta</button>
+          </div>
+        </div>
+        <div class="panel-section">
+          <div class="section-title">Playlist</div>
+          <div id="playlist" class="playlist"><span class="playlist-empty">Nenhuma música</span></div>
+        </div>
+        <div class="panel-section">
+          <div class="section-title">Sensibilidade</div>
+          <div class="control-group"><label>Graves</label><input type="range" id="sens-bass" min="0" max="200" value="100"><span class="control-value" id="sens-bass-value">100%</span></div>
+          <div class="control-group"><label>Médios</label><input type="range" id="sens-mid" min="0" max="200" value="100"><span class="control-value" id="sens-mid-value">100%</span></div>
+          <div class="control-group"><label>Agudos</label><input type="range" id="sens-treble" min="0" max="200" value="100"><span class="control-value" id="sens-treble-value">100%</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.THREE = require('three');
+  </script>
+  <script src="audio/AudioManager.js"></script>
+  <script src="audio/BeatDetector.js"></script>
+  <script src="visual/TextureGenerator.js"></script>
+  <script src="visual/SceneManager.js"></script>
+  <script src="visual/GeometryEngine.js"></script>
+  <script src="visual/ParticleSystem.js"></script>
+  <script src="visual/LightEngine.js"></script>
+  <script src="visual/PostProcessing.js"></script>
+  <script src="visual/VisualReactivity.js"></script>
+  <script src="ui/FileSystem.js"></script>
+  <script src="ui/ControlPanel.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
